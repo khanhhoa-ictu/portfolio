@@ -1,5 +1,5 @@
 import { styles } from "../styles";
-import Computers from "./canvas/Computers";
+import NightSkyCanvas from "./canvas/NightSkyCanvas";
 
 const Hero = () => {
   return (
@@ -21,7 +21,7 @@ const Hero = () => {
           </p>
         </div>
       </div>
-      <Computers />
+    <NightSkyCanvas/>
     
     </section>
   );

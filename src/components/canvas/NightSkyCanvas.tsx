@@ -3,9 +3,9 @@ import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import useIsMobile from "../../hook/useIsMobile";
 import CanvasLoader from "../Loader";
-import Computer from "./Computer";
+import NightSky from "./NightSky";
 
-const computerCanvas = () => {
+const NightSkyCanvas = () => {
   const {isMobile} = useIsMobile()
   return (
     <Canvas
@@ -20,10 +20,10 @@ const computerCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computer isMobile={isMobile} />
+        <NightSky isMobile={isMobile} />
       </Suspense>
       <Preload all />
     </Canvas>
   );
 };
-export default computerCanvas;
+export default NightSkyCanvas;
