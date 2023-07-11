@@ -1,4 +1,3 @@
-import React from 'react'
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 
 function ExperienceCard({ experience }:any) {
