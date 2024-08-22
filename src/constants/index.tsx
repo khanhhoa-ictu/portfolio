@@ -1,7 +1,7 @@
 import js from "../assets/javascript.png";
 import Amela from "../assets/company/Amela.jpg";
 import ReactPlus from "../assets/company/ReactPlus.jpg";
-import typeScript from "../assets/typeScript.png";
+import ts from "../assets/typescript.png";
 import next from "../assets/next.png";
 import css from "../assets/tech/css.png";
 import docker from "../assets/tech/docker.png";
@@ -51,7 +51,7 @@ const services = [
   },
   {
     title: "TypeScript",
-    icon: typeScript,
+    icon: ts,
   },
 ];
 
