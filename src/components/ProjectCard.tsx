@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Tilt } from "react-tilt";
-import { github } from "../assets";
+import github from '../assets/github.png'
 import { ITag } from "../interface/tag";
 import { fadeIn } from "../utils/motion";
 

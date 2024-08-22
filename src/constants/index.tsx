@@ -1,8 +1,8 @@
-import backend from "../assets/backend.png";
+import js from "../assets/javascript.png";
 import Amela from "../assets/company/Amela.jpg";
 import ReactPlus from "../assets/company/ReactPlus.jpg";
-import creator from "../assets/creator.png";
-import mobile from "../assets/mobile.png";
+import typeScript from "../assets/typeScript.png";
+import next from "../assets/next.png";
 import css from "../assets/tech/css.png";
 import docker from "../assets/tech/docker.png";
 import figma from "../assets/tech/figma.png";
@@ -16,7 +16,7 @@ import redux from "../assets/tech/redux.png";
 import tailwind from "../assets/tech/tailwind.png";
 import threejs from "../assets/tech/threejs.svg";
 import typescript from "../assets/tech/typescript.png";
-import web from "../assets/web.png";
+import react from "../assets/react.png";
 import blog from "../assets/blog.png";
 import portfolio from "../assets/portfolio.png";
 import margatsni from "../assets/margatsni.png";
@@ -39,19 +39,19 @@ export const navLinks = [
 const services = [
   {
     title: "ReactJS",
-    icon: web,
+    icon: react,
   },
   {
     title: "NextJS",
-    icon: mobile,
+    icon: next,
   },
   {
     title: "JavaScript",
-    icon: backend,
+    icon: js,
   },
   {
     title: "TypeScript",
-    icon: creator,
+    icon: typeScript,
   },
 ];
 
