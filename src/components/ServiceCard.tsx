@@ -4,7 +4,7 @@ import { fadeIn } from "../utils/motion";
 
 function ServiceCard({ index, title, icon }: any) {
   return (
-    <Tilt className="xs:w-[250px] w-full">
+    <Tilt className="w-[250px]">
       <motion.div
         variants={fadeIn("right", "spring", index * 0.5, 0.75)}
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"

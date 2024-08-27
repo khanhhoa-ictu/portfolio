@@ -1,5 +1,6 @@
 import js from "../assets/javascript.png";
 import Amela from "../assets/company/Amela.jpg";
+import phoenixUnity from "../assets/company/phoenix_unity.jpg";
 import ReactPlus from "../assets/company/ReactPlus.jpg";
 import ts from "../assets/typescript.png";
 import next from "../assets/next.png";
@@ -112,11 +113,11 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Amela",
-    icon: Amela,
-    iconBg: "#383E56",
-    date: "April 2022 - June 2023",
+    title: "FrontEnd Developer",
+    company_name: "PhoenixUnity",
+    icon: phoenixUnity,
+    iconBg: "#7a88bd",
+    date: "June 2023 - Now",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -125,16 +126,26 @@ const experiences = [
     ],
   },
   {
-    title: "React.js Developer",
+    title: "FrontEnd Developer",
+    company_name: "Amela",
+    icon: Amela,
+    iconBg: "#383E56",
+    date: "April 2022 - June 2023",
+    points: [
+      "Participated in many out-source projects by using reactjs technology.",
+      "Maintain and upgrade applications with new and existing features.",
+      "Participate in courses and activities within the company.",
+    ],
+  },
+  {
+    title: "FrontEnd Developer",
     company_name: "ReactPlus",
     icon: ReactPlus,
-    iconBg: "#E6DEDD",
+    iconBg: "#3b3636",
     date: "July 2021 - April 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Trained in web development knowledge (HTML, CSS, Javascript, ReactJS)",
+      "I also participated many out-source projects by using reactjs, nextjs technology.",
     ],
   },
 ];
