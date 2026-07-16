@@ -188,9 +188,9 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Margatsni Social",
+    name: "Awake Project",
     description:
-      "A social networking site that people can join to save their images, in addition to follow, make friends, like a post, message..., It's like instagram",
+      "A modern landing page designed to introduce the brand, highlight key services, and drive user engagement through a clean, responsive interface.",
     tags: [
       {
         name: "NextJs",
