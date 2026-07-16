@@ -1,5 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import type { ChangeEvent, FormEvent } from "react";
 import { useRef, useState } from "react";
 
 import { SectionWrapper } from "../hoc";
@@ -8,7 +9,7 @@ import { slideIn } from "../utils/motion";
 import { EarthCanvas } from "./canvas";
 
 const Contact = () => {
-  const formRef = useRef();
+  const formRef = useRef<HTMLFormElement | null>(null);
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -16,8 +17,15 @@ const Contact = () => {
   });
 
   const [loading, setLoading] = useState(false);
+  const emailJsConfig = {
+    serviceId: import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+    templateId: import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+    publicKey: import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+  };
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { target } = e;
     const { name, value } = target;
 
@@ -27,13 +35,25 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (
+      !emailJsConfig.serviceId ||
+      !emailJsConfig.templateId ||
+      !emailJsConfig.publicKey
+    ) {
+      console.error("Missing EmailJS config", emailJsConfig);
+      alert("EmailJS config is missing. Check your VITE_APP_EMAILJS_* values and restart the dev server.");
+      return;
+    }
+
     setLoading(true);
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+
+    try {
+      await emailjs.send(
+        emailJsConfig.serviceId,
+        emailJsConfig.templateId,
         {
           from_name: form.name,
           to_name: "Khanh Hoa",
@@ -41,26 +61,29 @@ const Contact = () => {
           to_email: "khanhhoa01ictu@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
-        }
+        emailJsConfig.publicKey
       );
+
+      alert("Thank you. I will get back to you as soon as possible.");
+
+      setForm({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error: any) {
+      console.error("EmailJS send failed", {
+        status: error?.status,
+        text: error?.text,
+        error,
+      });
+
+      alert(
+        `Email send failed${error?.text ? `: ${error.text}` : "."} Check the browser console for details.`
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -75,7 +98,7 @@ const Contact = () => {
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         <form
-          ref={formRef as any}
+          ref={formRef}
           onSubmit={handleSubmit}
           className='mt-12 flex flex-col gap-8'
         >
@@ -86,6 +109,7 @@ const Contact = () => {
               name='name'
               value={form.name}
               onChange={handleChange}
+              required
               placeholder="What's your good name?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
@@ -97,6 +121,7 @@ const Contact = () => {
               name='email'
               value={form.email}
               onChange={handleChange}
+              required
               placeholder="What's your web address?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
@@ -108,6 +133,7 @@ const Contact = () => {
               name='message'
               value={form.message}
               onChange={handleChange}
+              required
               placeholder='What you want to say?'
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
@@ -115,6 +141,7 @@ const Contact = () => {
 
           <button
             type='submit'
+            disabled={loading}
             className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
           >
             {loading ? "Sending..." : "Send"}

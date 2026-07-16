@@ -1,6 +1,7 @@
 import js from "../assets/javascript.png";
 import Amela from "../assets/company/Amela.jpg";
 import phoenixUnity from "../assets/company/phoenix_unity.jpg";
+import powerGate from "../assets/company/powergate.png";
 import ReactPlus from "../assets/company/ReactPlus.jpg";
 import ts from "../assets/typescript.png";
 import next from "../assets/next.png";
@@ -15,12 +16,11 @@ import nodejs from "../assets/tech/nodejs.png";
 import reactjs from "../assets/tech/reactjs.png";
 import redux from "../assets/tech/redux.png";
 import tailwind from "../assets/tech/tailwind.png";
-import threejs from "../assets/tech/threejs.svg";
 import typescript from "../assets/tech/typescript.png";
 import react from "../assets/react.png";
-import blog from "../assets/blog.png";
+import awakeProject from "../assets/awake_project.png";
 import portfolio from "../assets/portfolio.png";
-import margatsni from "../assets/margatsni.png";
+import blog from "../assets/blog.png";
 
 export const navLinks = [
   {
@@ -94,10 +94,6 @@ const technologies = [
     icon: mongodb,
   },
   {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
     name: "git",
     icon: git,
   },
@@ -113,11 +109,24 @@ const technologies = [
 
 const experiences = [
   {
+    title: "Frontend Developer",
+    company_name: "PowerGate Software",
+    icon: powerGate,
+    iconBg: "#7a88bd",
+    date: "May 2025 - Now",
+    points: [
+      "Leading frontend architecture and delivering scalable React applications for client-facing products and internal platforms.",
+      "Driving technical decisions across component design, state management, performance optimization, and maintainable UI patterns.",
+      "Partnering closely with product managers, designers, and backend engineers to turn complex business requirements into polished user experiences.",
+      "Reviewing code, mentoring teammates, and improving engineering standards through stronger collaboration, feedback, and frontend best practices.",
+    ],
+  },
+  {
     title: "FrontEnd Developer",
     company_name: "PhoenixUnity",
     icon: phoenixUnity,
     iconBg: "#7a88bd",
-    date: "June 2023 - Now",
+    date: "June 2023 - May 2025",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
       "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -179,6 +188,44 @@ const testimonials = [
 
 const projects = [
   {
+    name: "Margatsni Social",
+    description:
+      "A social networking site that people can join to save their images, in addition to follow, make friends, like a post, message..., It's like instagram",
+    tags: [
+      {
+        name: "NextJs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Tailwind",
+        color: "green-text-gradient",
+      },
+    ],
+    image: awakeProject,
+    source_code_link: "https://github.com/khanhhoa-ictu/Awake-project",
+  },
+  {
+    name: "portfolio",
+    description:
+      "my name is Khanh Hoa. and my portfolio is a representation of all that i've learned and accomplished as a front end developer. I hope you will like it",
+    tags: [
+      {
+        name: "React",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "ThreeJS",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Tailwind",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: portfolio,
+    source_code_link: "https://github.com/khanhhoa-ictu/portfolio",
+  },
+  {
     name: "Blog",
     description:
       "Web-based platform that allows users to read articles, leave comments, login, register. Provide quality articles on technology knowledge",
@@ -188,58 +235,12 @@ const projects = [
         color: "blue-text-gradient",
       },
       {
-        name: "mysql",
+        name: "Mysql",
         color: "green-text-gradient",
-      },
-      {
-        name: "Ant Design",
-        color: "pink-text-gradient",
       },
     ],
     image: blog,
     source_code_link: "https://github.com/khanhhoa-ictu/next-blog",
-  },
-  {
-    name: "portfolio",
-    description:
-      "my name is Khanh Hoa. and my portfolio is a representation of all that i've learned and accomplished as a front end developer. I hope you will like it",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "ThreeJS",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: portfolio,
-    source_code_link: "https://github.com/khanhhoa-ictu/portfolio",
-  },
-  {
-    name: "Margatsni Social",
-    description:
-      "A social networking site that people can join to save their images, in addition to follow, make friends, like a post, message..., It's like instagram",
-    tags: [
-      {
-        name: "ReactJS",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "MongoDB",
-        color: "green-text-gradient",
-      },
-      {
-        name: "styled component",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: margatsni,
-    source_code_link: "https://github.com/khanhhoa-ictu/Social_Media",
   },
 ];
 

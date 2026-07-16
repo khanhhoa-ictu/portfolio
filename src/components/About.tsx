@@ -26,8 +26,14 @@ const About = () => {
             efficient, scalable. Let's work together to bring your ideas to life!
           </motion.p>
         </div>
-        <motion.div  variants={fadeIn("left", "spring", 0.2, 0.55)} className="w-[300px] hidden lg:block">
-          <img className="rounded-lg" src={avatar} alt="avatar" />
+        <motion.div variants={fadeIn("left", "spring", 0.2, 0.55)} className="w-[300px] hidden lg:block">
+          <img
+            className="rounded-lg"
+            src={avatar}
+            alt="avatar"
+            loading="lazy"
+            decoding="async"
+          />
         </motion.div>
       </div>
 
